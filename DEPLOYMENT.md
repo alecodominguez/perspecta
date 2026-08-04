@@ -8,11 +8,11 @@ Go to [github.com/new](https://github.com/new). Name it `perspecta` (or anything
 
 ## 2. Push the files
 
-From the folder containing `index.html`, `styles.css`, and `script.js`:
+From the folder containing `index.html`, `styles.css`, `script.js`, and the `assets/` folder:
 
 ```bash
 git init
-git add index.html styles.css script.js
+git add index.html styles.css script.js assets
 git commit -m "Initial Perspecta site"
 git branch -M main
 git remote add origin https://github.com/<your-username>/<repo-name>.git
@@ -37,6 +37,7 @@ https://<your-username>.github.io/<repo-name>/
 
 ### Notes
 
-- Images currently use `picsum.photos` placeholders — swap the `src` attributes in `index.html` for real photography before launch.
+- The logo, hero visual, "Who We Are" infographic, and the four Instagram reflection cards in `assets/` are your real brand images.
+- The "Latest Insights & Reports" grid still uses `picsum.photos` placeholders, since no real article photography was provided — swap those `src` attributes in `index.html` for real photos as you publish reports.
 - The newsletter form is front-end only; connect it to a provider (Mailchimp, Buttondown, ConvertKit) for real signups.
 - Update the Twitter/X and LinkedIn URLs in the footer once those accounts exist.
