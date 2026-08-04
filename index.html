@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perspecta — Human Insight for a Connected World</title>
+<meta name="description" content="Perspecta is a human insight and storytelling organization documenting global research, culture, and society through the lens of lived experience.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>◆</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#top" class="logo" aria-label="Perspecta home">
+      <span class="logo-mark" aria-hidden="true">◆</span>
+      <span class="logo-text">Perspecta</span>
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <ul>
+        <li><a href="#topics">Topics</a></li>
+        <li><a href="#reports">Reports</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Toggle search" aria-expanded="false" aria-controls="searchBar">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <a href="#newsletter" class="btn btn-primary">Support</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="search-bar" id="searchBar">
+    <div class="container search-bar-inner">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="search" placeholder="Search reports, topics, and insights…" aria-label="Search Perspecta">
+      <button class="icon-btn" id="searchClose" aria-label="Close search">✕</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <article class="hero-feature">
+        <div class="hero-img-wrap">
+          <img src="https://picsum.photos/seed/perspecta-hero/1200/1400" alt="A displaced family gathers belongings at a border crossing at dusk." loading="eager">
+          <span class="tag tag-onimg">Featured Investigation</span>
+        </div>
+        <div class="hero-copy">
+          <h1>The Hidden Cost of Displacement: Voices from the Border</h1>
+          <p class="hero-excerpt">A year-long investigation into how families rebuild identity, community, and trust after forced migration — told through the people living it.</p>
+          <div class="byline">
+            <span class="byline-author">By Elena Marsh</span>
+            <span class="byline-dot" aria-hidden="true">·</span>
+            <span class="byline-date">Aug 1, 2026</span>
+            <span class="byline-dot" aria-hidden="true">·</span>
+            <span class="byline-read">8 min read</span>
+          </div>
+        </div>
+      </article>
+
+      <aside class="hero-sidebar" aria-label="More top stories">
+        <h2 class="sidebar-heading">Also This Week</h2>
+        <ul class="sidebar-list">
+          <li>
+            <a href="#" class="sidebar-item">
+              <span class="tag tag-small">Tech &amp; Humanity</span>
+              <span class="sidebar-title">AI and the Erosion of Human Judgment</span>
+              <span class="sidebar-meta">Jul 15, 2026 · 6 min read</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar-item">
+              <span class="tag tag-small">Society</span>
+              <span class="sidebar-title">The Loneliness Epidemic in Hyper-Connected Cities</span>
+              <span class="sidebar-meta">Jul 22, 2026 · 5 min read</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar-item">
+              <span class="tag tag-small">Culture</span>
+              <span class="sidebar-title">How Oral Traditions Are Surviving the Digital Age</span>
+              <span class="sidebar-meta">Jul 28, 2026 · 7 min read</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="sidebar-item">
+              <span class="tag tag-small">Human Rights</span>
+              <span class="sidebar-title">Child Labor in the Global Supply Chain: A 2026 Snapshot</span>
+              <span class="sidebar-meta">Jul 10, 2026 · 9 min read</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== TOPIC STRIP ===== -->
+  <section class="topic-strip" id="topics" aria-label="Browse by topic">
+    <div class="container topic-strip-inner">
+      <a href="#reports" class="topic-chip">Human Rights</a>
+      <a href="#reports" class="topic-chip">Culture</a>
+      <a href="#reports" class="topic-chip">Society</a>
+      <a href="#reports" class="topic-chip">Tech &amp; Humanity</a>
+      <a href="#reports" class="topic-chip">Migration</a>
+      <a href="#reports" class="topic-chip">Global Voices</a>
+      <a href="#reports" class="topic-chip">Field Research</a>
+    </div>
+  </section>
+
+  <!-- ===== REPORTS GRID ===== -->
+  <section class="reports" id="reports">
+    <div class="container">
+      <div class="section-head">
+        <h2>Latest Insights &amp; Reports</h2>
+        <p class="section-sub">Original research and field reporting on the forces shaping human experience.</p>
+      </div>
+
+      <div class="filter-tabs" role="tablist" aria-label="Filter reports by category">
+        <button class="filter-tab is-active" role="tab" aria-selected="true" data-filter="all">All</button>
+        <button class="filter-tab" role="tab" aria-selected="false" data-filter="human-rights">Human Rights</button>
+        <button class="filter-tab" role="tab" aria-selected="false" data-filter="culture">Culture</button>
+        <button class="filter-tab" role="tab" aria-selected="false" data-filter="society">Society</button>
+        <button class="filter-tab" role="tab" aria-selected="false" data-filter="tech-humanity">Tech &amp; Humanity</button>
+      </div>
+
+      <div class="reports-grid" id="reportsGrid">
+
+        <article class="report-card" data-category="human-rights">
+          <a href="#" class="report-img-wrap">
+            <img src="https://picsum.photos/seed/perspecta-camp/600/450" alt="Volunteers organizing supplies inside a resilience-focused refugee camp." loading="lazy">
+            <span class="tag tag-onimg">Human Rights</span>
+          </a>
+          <div class="report-body">
+            <span class="report-date">Aug 1, 2026</span>
+            <h3><a href="#">Inside the Refugee Camps Redefining Resilience</a></h3>
+            <p>How grassroots leadership is transforming temporary settlements into self-sustaining communities.</p>
+          </div>
+        </article>
+
+        <article class="report-card" data-category="culture">
+          <a href="#" class="report-img-wrap">
+            <img src="https://picsum.photos/seed/perspecta-oral/600/450" alt="An elder storyteller speaks to a group of young listeners." loading="lazy">
+            <span class="tag tag-onimg">Culture</span>
+          </a>
+          <div class="report-body">
+            <span class="report-date">Jul 28, 2026</span>
+            <h3><a href="#">How Oral Traditions Are Surviving the Digital Age</a></h3>
+            <p>Communities are pairing ancient storytelling practices with new platforms to preserve endangered histories.</p>
+          </div>
+        </article>
+
+        <article class="report-card" data-category="society">
+          <a href="#" class="report-img-wrap">
+            <img src="https://picsum.photos/seed/perspecta-lonely/600/450" alt="A commuter stands alone in a crowded city train station." loading="lazy">
+            <span class="tag tag-onimg">Society</span>
+          </a>
+          <div class="report-body">
+            <span class="report-date">Jul 22, 2026</span>
+            <h3><a href="#">The Loneliness Epidemic in Hyper-Connected Cities</a></h3>
+            <p>New field data on isolation in dense urban environments — and the small interventions reversing it.</p>
+          </div>
+        </article>
+
+        <article class="report-card" data-category="tech-humanity">
+          <a href="#" class="report-img-wrap">
+            <img src="https://picsum.photos/seed/perspecta-ai/600/450" alt="A person reviews algorithmic decisions on a bank of monitors." loading="lazy">
+            <span class="tag tag-onimg">Tech &amp; Humanity</span>
+          </a>
+          <div class="report-body">
+            <span class="report-date">Jul 15, 2026</span>
+            <h3><a href="#">AI and the Erosion of Human Judgment</a></h3>
+            <p>What happens to decision-making, empathy, and accountability when algorithms take the wheel.</p>
+          </div>
+        </article>
+
+        <article class="report-card" data-category="human-rights">
+          <a href="#" class="report-img-wrap">
+            <img src="https://picsum.photos/seed/perspecta-labor/600/450" alt="A close-up of hands working at a textile factory station." loading="lazy">
+            <span class="tag tag-onimg">Human Rights</span>
+          </a>
+          <div class="report-body">
+            <span class="report-date">Jul 10, 2026</span>
+            <h3><a href="#">Child Labor in the Global Supply Chain: A 2026 Snapshot</a></h3>
+            <p>Tracing accountability gaps across three continents of manufacturing and sourcing.</p>
+          </div>
+        </article>
+
+        <article class="report-card" data-category="society">
+          <a href="#" class="report-img-wrap">
+            <img src="https://picsum.photos/seed/perspecta-aging/600/450" alt="A caregiver assists an elderly person in a sunlit living room." loading="lazy">
+            <span class="tag tag-onimg">Society</span>
+          </a>
+          <div class="report-body">
+            <span class="report-date">Jul 3, 2026</span>
+            <h3><a href="#">Aging Populations and the Future of Care Work</a></h3>
+            <p>As the global caregiving gap widens, who is left to carry the weight — and at what cost?</p>
+          </div>
+        </article>
+
+        <article class="report-card" data-category="culture">
+          <a href="#" class="report-img-wrap">
+            <img src="https://picsum.photos/seed/perspecta-language/600/450" alt="An open notebook with handwritten notes in an endangered language." loading="lazy">
+            <span class="tag tag-onimg">Culture</span>
+          </a>
+          <div class="report-body">
+            <span class="report-date">Jun 29, 2026</span>
+            <h3><a href="#">Language Loss: One Tongue Disappears Every Two Weeks</a></h3>
+            <p>Linguists and communities race to document languages before the last fluent speakers are gone.</p>
+          </div>
+        </article>
+
+        <article class="report-card" data-category="tech-humanity">
+          <a href="#" class="report-img-wrap">
+            <img src="https://picsum.photos/seed/perspecta-surveillance/600/450" alt="A city street lined with security cameras at dusk." loading="lazy">
+            <span class="tag tag-onimg">Tech &amp; Humanity</span>
+          </a>
+          <div class="report-body">
+            <span class="report-date">Jun 20, 2026</span>
+            <h3><a href="#">Surveillance Capitalism's New Frontier</a></h3>
+            <p>Inside the quiet expansion of behavioral data markets — and what it means for autonomy.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="no-results" id="noResults" hidden>No reports match this filter yet — check back soon.</p>
+
+      <div class="reports-cta">
+        <a href="#" class="btn btn-outline">View All Reports</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SPOTLIGHT / IMPACT ===== -->
+  <section class="spotlight" id="about">
+    <div class="container spotlight-inner">
+      <div class="spotlight-copy">
+        <span class="eyebrow">Our Mission</span>
+        <h2>We believe every statistic has a face, and every policy has a person behind it.</h2>
+        <p>Perspecta exists to close the distance between data and lived experience. We send researchers, writers, and listeners into the field to document human perspective with rigor and respect — then bring it back to the people who can act on it.</p>
+        <a href="#insights" class="btn btn-light">Explore Our Work</a>
+      </div>
+
+      <div class="spotlight-stats">
+        <div class="stat">
+          <span class="stat-number">120+</span>
+          <span class="stat-label">Countries Researched</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">50K+</span>
+          <span class="stat-label">Voices Documented</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">300</span>
+          <span class="stat-label">Field Reports Published</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">15</span>
+          <span class="stat-label">Years of Human-Centered Research</span>
+        </div>
+      </div>
+
+      <blockquote class="spotlight-quote">
+        <p>"Numbers tell you what happened. People tell you why it matters."</p>
+        <cite>— Dr. Amara Okonkwo, Founding Director, Perspecta</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ===== MULTIMEDIA / MEDIA FEED ===== -->
+  <section class="media-feed" id="insights">
+    <div class="container">
+      <div class="section-head">
+        <h2>Visual Stories &amp; Voices</h2>
+        <p class="section-sub">Documentary photography, field audio, and highlights from @perspectahumaninsight.</p>
+      </div>
+
+      <div class="media-grid">
+        <article class="media-card media-card--video">
+          <a href="#" class="media-thumb">
+            <img src="https://picsum.photos/seed/perspecta-doc/700/500" alt="Still from a documentary short following a research team in the field." loading="lazy">
+            <span class="play-icon" aria-hidden="true">▶</span>
+          </a>
+          <div class="media-body">
+            <span class="tag tag-small">Visual Story</span>
+            <h3>Field Notes: Three Weeks on the Mekong Delta</h3>
+            <p>A short documentary on communities adapting to rising water and changing livelihoods.</p>
+          </div>
+        </article>
+
+        <article class="media-card media-card--audio">
+          <a href="#" class="media-thumb">
+            <img src="https://picsum.photos/seed/perspecta-podcast/700/500" alt="A podcast microphone set up for a Perspecta Voices recording session." loading="lazy">
+            <span class="play-icon" aria-hidden="true">▶</span>
+          </a>
+          <div class="media-body">
+            <span class="tag tag-small">Perspecta Voices · Podcast</span>
+            <h3>Ep. 42 — What Displacement Teaches Us About Home</h3>
+            <p>A conversation with three researchers who spent a year documenting migration corridors.</p>
+          </div>
+        </article>
+
+        <div class="media-social">
+          <div class="media-social-head">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2 .25 2.5.42a5 5 0 0 1 1.8 1.17 5 5 0 0 1 1.17 1.8c.17.5.36 1.3.42 2.5.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 2-.42 2.5a5 5 0 0 1-1.17 1.8 5 5 0 0 1-1.8 1.17c-.5.17-1.3.36-2.5.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2-.25-2.5-.42a5 5 0 0 1-1.8-1.17 5 5 0 0 1-1.17-1.8c-.17-.5-.36-1.3-.42-2.5C2.21 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-2 .42-2.5a5 5 0 0 1 1.17-1.8 5 5 0 0 1 1.8-1.17c.5-.17 1.3-.36 2.5-.42C8.4 2.21 8.8 2.2 12 2.2Zm0 1.8c-3.15 0-3.52 0-4.76.07-.97.04-1.5.2-1.85.34-.46.18-.79.4-1.14.75-.35.35-.57.68-.75 1.14-.14.35-.3.88-.34 1.85C3.1 8.48 3.1 8.85 3.1 12s0 3.52.06 4.76c.04.97.2 1.5.34 1.85.18.46.4.79.75 1.14.35.35.68.57 1.14.75.35.14.88.3 1.85.34 1.24.06 1.61.06 4.76.06s3.52 0 4.76-.06c.97-.04 1.5-.2 1.85-.34.46-.18.79-.4 1.14-.75.35-.35.57-.68.75-1.14.14-.35.3-.88.34-1.85.06-1.24.06-1.61.06-4.76s0-3.52-.06-4.76c-.04-.97-.2-1.5-.34-1.85a3.2 3.2 0 0 0-.75-1.14 3.2 3.2 0 0 0-1.14-.75c-.35-.14-.88-.3-1.85-.34C15.52 4 15.15 4 12 4Zm0 3.4a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2Zm0 1.8a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm4.8-1.99a1.07 1.07 0 1 1 0-2.15 1.07 1.07 0 0 1 0 2.15Z"/></svg>
+            <div>
+              <p class="media-social-handle">@perspectahumaninsight</p>
+              <a href="https://instagram.com/perspectahumaninsight" target="_blank" rel="noopener noreferrer" class="media-social-link">Follow on Instagram →</a>
+            </div>
+          </div>
+          <div class="media-social-grid">
+            <a href="https://instagram.com/perspectahumaninsight" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/seed/perspecta-ig1/300/300" alt="Instagram highlight from Perspecta"></a>
+            <a href="https://instagram.com/perspectahumaninsight" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/seed/perspecta-ig2/300/300" alt="Instagram highlight from Perspecta"></a>
+            <a href="https://instagram.com/perspectahumaninsight" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/seed/perspecta-ig3/300/300" alt="Instagram highlight from Perspecta"></a>
+            <a href="https://instagram.com/perspectahumaninsight" target="_blank" rel="noopener noreferrer"><img src="https://picsum.photos/seed/perspecta-ig4/300/300" alt="Instagram highlight from Perspecta"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="newsletter" id="newsletter">
+    <div class="container newsletter-inner">
+      <div class="newsletter-copy">
+        <h2>Stay Informed on Global Human Insights</h2>
+        <p>One email, twice a month. New reports, field dispatches, and the stories behind the data.</p>
+      </div>
+      <form class="newsletter-form" id="newsletterForm">
+        <label for="newsletterEmail" class="sr-only">Email address</label>
+        <input type="email" id="newsletterEmail" name="email" placeholder="you@example.com" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+      <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" id="contact">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="#top" class="logo logo--footer">
+        <span class="logo-mark" aria-hidden="true">◆</span>
+        <span class="logo-text">Perspecta</span>
+      </a>
+      <p>Human insight, storytelling, and research for a more understood world.</p>
+      <div class="social-icons">
+        <a href="https://instagram.com/perspectahumaninsight" target="_blank" rel="noopener noreferrer" aria-label="Perspecta on Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2 .25 2.5.42a5 5 0 0 1 1.8 1.17 5 5 0 0 1 1.17 1.8c.17.5.36 1.3.42 2.5.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 2-.42 2.5a5 5 0 0 1-1.17 1.8 5 5 0 0 1-1.8 1.17c-.5.17-1.3.36-2.5.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2-.25-2.5-.42a5 5 0 0 1-1.8-1.17 5 5 0 0 1-1.17-1.8c-.17-.5-.36-1.3-.42-2.5C2.21 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-2 .42-2.5a5 5 0 0 1 1.17-1.8 5 5 0 0 1 1.8-1.17c.5-.17 1.3-.36 2.5-.42C8.4 2.21 8.8 2.2 12 2.2Zm0 1.8c-3.15 0-3.52 0-4.76.07-.97.04-1.5.2-1.85.34-.46.18-.79.4-1.14.75-.35.35-.57.68-.75 1.14-.14.35-.3.88-.34 1.85C3.1 8.48 3.1 8.85 3.1 12s0 3.52.06 4.76c.04.97.2 1.5.34 1.85.18.46.4.79.75 1.14.35.35.68.57 1.14.75.35.14.88.3 1.85.34 1.24.06 1.61.06 4.76.06s3.52 0 4.76-.06c.97-.04 1.5-.2 1.85-.34.46-.18.79-.4 1.14-.75.35-.35.57-.68.75-1.14.14-.35.3-.88.34-1.85.06-1.24.06-1.61.06-4.76s0-3.52-.06-4.76c-.04-.97-.2-1.5-.34-1.85a3.2 3.2 0 0 0-.75-1.14 3.2 3.2 0 0 0-1.14-.75c-.35-.14-.88-.3-1.85-.34C15.52 4 15.15 4 12 4Zm0 3.4a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2Zm0 1.8a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Zm4.8-1.99a1.07 1.07 0 1 1 0-2.15 1.07 1.07 0 0 1 0 2.15Z"/></svg>
+        </a>
+        <a href="https://twitter.com/perspecta" target="_blank" rel="noopener noreferrer" aria-label="Perspecta on X (Twitter)">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M18.9 2.75h3.07l-6.71 7.67 7.9 10.83h-6.19l-4.85-6.34-5.55 6.34H3.5l7.18-8.2L3.1 2.75h6.35l4.38 5.79 5.07-5.79Zm-1.08 16.66h1.7L7.28 4.5H5.46l12.36 14.91Z"/></svg>
+        </a>
+        <a href="https://linkedin.com/company/perspecta" target="_blank" rel="noopener noreferrer" aria-label="Perspecta on LinkedIn">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3.5 9.75h2.96V21H3.5V9.75Zm6.4 0h2.84v1.54h.04c.4-.75 1.36-1.54 2.8-1.54 3 0 3.55 1.97 3.55 4.54V21h-2.96v-4.98c0-1.19-.02-2.72-1.66-2.72-1.66 0-1.92 1.3-1.92 2.63V21H9.9V9.75Z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <nav class="footer-col" aria-label="Explore">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="#topics">Topics</a></li>
+        <li><a href="#reports">Reports</a></li>
+        <li><a href="#insights">Insights</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="Organization">
+      <h3>Organization</h3>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#">Our Research Methodology</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-col" aria-label="Take action">
+      <h3>Take Action</h3>
+      <ul>
+        <li><a href="#newsletter">Support Our Work</a></li>
+        <li><a href="#">Partner With Us</a></li>
+        <li><a href="#">Share a Story</a></li>
+        <li><a href="mailto:hello@perspecta.org">hello@perspecta.org</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© 2026 Perspecta. All rights reserved.</p>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
