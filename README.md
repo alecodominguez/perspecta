@@ -1,13 +1,13 @@
 # Perspecta — Human Insight
 
-Static website for **Perspecta Human Insight**, a human-centered advisory initiative documenting research, culture, and society through lived experience.
+Static website for **Perspecta Human Insight**, a founding-stage nonprofit initiative creating opportunities for emerging thinkers to share ideas, examine complex issues, and develop practical solutions across fields.
 
 **Live site:** https://alecodominguez.github.io/perspecta/
 **Instagram:** [@perspectahumaninsight](https://instagram.com/perspectahumaninsight)
 
 ## About
 
-Perspecta is a human-centered development and advisory initiative dedicated to transforming real human perspectives into solutions that advance rights, opportunity, and sustainable progress. This site is the organization's public home: it introduces who Perspecta is, defines what human rights mean, and surfaces research and reflections on human rights, culture, society, and technology.
+Perspecta Human Insight is built as an ecosystem, not a single publication: a nonprofit **Foundation** (fellowships, research, mentorship, community programming), a public-facing **Publication** (perspective pieces, deep dives, and solutions), a **Fellows** community for students and young professionals, and a future, legally separate **Consulting** LLC. The working model is Perspective → Conversation → Research → Solution(s) → Action(s). This site is the organization's public home — it's currently in its founding stage, so it leads with the mission, the fellowship, and how to get involved (board, contributors, advisors, partners) rather than a live content archive.
 
 ## Tech stack
 
@@ -26,9 +26,14 @@ Pure HTML5, CSS3, and vanilla JavaScript — no build step, no dependencies, no 
 
 ## Features
 
-- Editorial homepage: hero manifesto, "What Are Human Rights?" section grounded in the UDHR, filterable insights/reports grid, org pillars (Who We Are / Aim / Approach / Purpose / Vision), and a media feed of real Instagram content.
+- Founding-stage framing throughout: a "Founding Stage" badge in the hero, an honesty note on the reports grid, and a footer disclosure that the nonprofit is still in formation (contributions not yet tax-deductible).
+- Working-model strip (Perspective → Conversation → Research → Solution(s) → Action(s)).
+- Official Mission, Vision, and Values, plus a four-part Ecosystem grid (Foundation, Publication, Fellows, future Consulting).
+- Content-format legend (Perspecta Human Insight 500 / 1000 / Solutions) above a filterable, illustrative insights/reports grid.
+- Dedicated **Fellowship** section (submission requirements, selection criteria, founding-cohort benefits) and a **Get Involved** section for prospective board members, contributors, advisors, and partners, listing the expertise areas the founding board is seeking.
+- "What Are Human Rights?" deep dive, grounded in the UDHR and the org's own Instagram reflections, framed as a sample "1000" piece.
 - Fully responsive, mobile-first layout with a sticky header and off-canvas mobile nav.
-- Category filtering on the reports grid (Human Rights, Culture, Society, Tech & Humanity) — no page reload.
+- Category filtering on the reports grid — no page reload.
 - Color palette and typography derived from the Perspecta brand mark.
 
 ## Local preview
