@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writer Dashboard — Perspecta Human Insight</title>
+<meta name="description" content="Fellow writer dashboard: draft, tag, classify, and submit articles to the Perspecta Human Insight board for review.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Perspecta home">
+      <span class="logo-badge"><img src="assets/logo.jpg" alt="Perspecta logo"></span>
+      <span class="logo-text-wrap">
+        <span class="logo-text">Perspecta</span>
+        <span class="logo-tagline">Writer Dashboard</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <span class="dash-whoami" id="whoami" hidden></span>
+      <button class="btn btn-outline" data-action="sign-out">Sign Out</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="dash">
+    <div class="container">
+
+      <div class="dash-head">
+        <div>
+          <span class="eyebrow">Fellow Workspace</span>
+          <h1>Your Articles</h1>
+          <p class="section-sub">Draft, tag, and submit your perspective for board review. You can keep editing a draft or a piece sent back for revision — once it's submitted, published, or rejected, it's locked.</p>
+        </div>
+        <button class="btn btn-primary" id="newArticleBtn">+ New Article</button>
+      </div>
+
+      <div class="dash-grid">
+        <aside class="dash-list" aria-label="Your articles">
+          <ul id="articleList" class="dash-article-list">
+            <li class="dash-empty" id="articleListEmpty">Loading your articles…</li>
+          </ul>
+        </aside>
+
+        <div class="dash-editor">
+          <form id="articleForm">
+            <input type="hidden" id="articleId" value="">
+
+            <label class="auth-label" for="fieldTitle">Title</label>
+            <input class="auth-input" type="text" id="fieldTitle" required maxlength="140" placeholder="A clear, specific headline">
+
+            <label class="auth-label" for="fieldSubtitle">Subtitle</label>
+            <input class="auth-input" type="text" id="fieldSubtitle" maxlength="200" placeholder="One line of context (optional)">
+
+            <label class="auth-label" for="fieldContent">
+              Article Content
+              <span class="auth-hint-inline">Plain text or Markdown — ** bold **, _italic_, ## heading, [link](url)</span>
+            </label>
+            <div class="md-toolbar" role="toolbar" aria-label="Formatting">
+              <button type="button" data-md="bold" title="Bold"><strong>B</strong></button>
+              <button type="button" data-md="italic" title="Italic"><em>I</em></button>
+              <button type="button" data-md="heading" title="Heading">H</button>
+              <button type="button" data-md="link" title="Link">🔗</button>
+            </div>
+            <textarea class="auth-input md-textarea" id="fieldContent" required rows="14" placeholder="Write your piece here…"></textarea>
+            <p class="auth-hint" id="wordCount">0 words</p>
+
+            <fieldset class="field-group">
+              <legend class="auth-label">Perspective Tags <span class="auth-hint-inline">(select all that apply)</span></legend>
+              <div class="tag-select" id="perspectiveTags">
+                <label class="tag-check"><input type="checkbox" value="Human Rights"> Human Rights</label>
+                <label class="tag-check"><input type="checkbox" value="Culture"> Culture</label>
+                <label class="tag-check"><input type="checkbox" value="Society"> Society</label>
+                <label class="tag-check"><input type="checkbox" value="Tech & Humanity"> Tech &amp; Humanity</label>
+              </div>
+              <div class="custom-tag-row">
+                <input class="auth-input" type="text" id="customTagInput" placeholder="Add a custom category…">
+                <button type="button" class="btn btn-outline" id="addCustomTag">Add Tag</button>
+              </div>
+              <div class="tag-select" id="customTags"></div>
+              <p class="field-error" id="tagsError" hidden>Select at least one perspective tag.</p>
+            </fieldset>
+
+            <fieldset class="field-group">
+              <legend class="auth-label">Insight Classification</legend>
+              <div class="radio-select">
+                <label class="radio-option">
+                  <input type="radio" name="insightType" value="500">
+                  <span><strong>Perspecta Human Insight 500</strong><br>Short perspective piece — what's happening and why it matters.</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="insightType" value="1000">
+                  <span><strong>Perspecta Human Insight 1000</strong><br>Deeper analysis — a problem, the evidence, and interpretation.</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="insightType" value="SOLUTIONS">
+                  <span><strong>Perspecta Human Insight Solutions</strong><br>Longer work centered on a practical, feasible solution.</span>
+                </label>
+              </div>
+              <p class="field-error" id="classificationError" hidden>Choose an insight classification before submitting for review.</p>
+            </fieldset>
+
+            <div class="dash-status-row">
+              <span class="status-badge" id="currentStatusBadge" hidden></span>
+              <p class="dash-feedback-note" id="reviewerFeedback" hidden></p>
+            </div>
+
+            <div class="dash-actions">
+              <button type="button" class="btn btn-outline" id="saveDraftBtn">Save Draft</button>
+              <button type="button" class="btn btn-primary" id="submitReviewBtn">Submit to Board for Review</button>
+            </div>
+            <p class="auth-status" id="formStatusMsg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/supabase-config.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/toast.js"></script>
+<script src="assets/js/writer-dashboard.js"></script>
+</body>
+</html>

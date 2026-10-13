@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign In — Perspecta Human Insight</title>
+<meta name="description" content="Sign in to your Perspecta Human Insight account to access the Fellow Writer Dashboard or Board Review Dashboard.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Perspecta home">
+      <span class="logo-badge"><img src="assets/logo.jpg" alt="Perspecta logo"></span>
+      <span class="logo-text-wrap">
+        <span class="logo-text">Perspecta</span>
+        <span class="logo-tagline">Human Insight</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <a href="index.html" class="btn btn-outline">Back to Site</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="auth-section">
+    <div class="container auth-wrap">
+      <div class="auth-card">
+        <div class="auth-tabs" role="tablist" aria-label="Sign in or create an account">
+          <button class="auth-tab is-active" role="tab" aria-selected="true" data-tab="signin">Sign In</button>
+          <button class="auth-tab" role="tab" aria-selected="false" data-tab="signup">Create Account</button>
+        </div>
+
+        <form id="signinForm" class="auth-form" data-panel="signin">
+          <label class="auth-label" for="signinEmail">Email</label>
+          <input class="auth-input" type="email" id="signinEmail" required autocomplete="email">
+
+          <label class="auth-label" for="signinPassword">Password</label>
+          <input class="auth-input" type="password" id="signinPassword" required autocomplete="current-password">
+
+          <button type="submit" class="btn btn-primary auth-submit">Sign In</button>
+          <p class="auth-status" id="signinStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <form id="signupForm" class="auth-form" data-panel="signup" hidden>
+          <label class="auth-label" for="signupName">Full name</label>
+          <input class="auth-input" type="text" id="signupName" required autocomplete="name">
+
+          <label class="auth-label" for="signupEmail">Email</label>
+          <input class="auth-input" type="email" id="signupEmail" required autocomplete="email">
+
+          <label class="auth-label" for="signupPassword">Password</label>
+          <input class="auth-input" type="password" id="signupPassword" required minlength="8" autocomplete="new-password">
+          <p class="auth-hint">At least 8 characters.</p>
+
+          <button type="submit" class="btn btn-primary auth-submit">Create Account</button>
+          <p class="auth-note">New accounts start as a <strong>Viewer</strong>. Writer (Fellow) and Board access is granted by the Perspecta team once your fellowship application or board invitation is confirmed — see <a href="index.html#fellowship">the Fellowship</a> or <a href="index.html#involved">Get Involved</a>.</p>
+          <p class="auth-status" id="signupStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-bottom">
+    <div class="footer-status">
+      <p>© 2026 Perspecta Human Insight. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="assets/js/supabase-config.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/toast.js"></script>
+<script>
+  const tabs = document.querySelectorAll('.auth-tab');
+  const panels = {
+    signin: document.getElementById('signinForm'),
+    signup: document.getElementById('signupForm')
+  };
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((t) => { t.classList.remove('is-active'); t.setAttribute('aria-selected', 'false'); });
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+      Object.entries(panels).forEach(([key, panel]) => { panel.hidden = key !== tab.dataset.tab; });
+    });
+  });
+
+  function paramRedirect() {
+    const params = new URLSearchParams(location.search);
+    return params.get('redirect') || 'index.html';
+  }
+
+  async function redirectIfSignedIn() {
+    const profile = await window.PerspectaAuth.getProfile();
+    if (profile) location.href = paramRedirect();
+  }
+  redirectIfSignedIn();
+
+  document.getElementById('signinForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const status = document.getElementById('signinStatus');
+    const client = window.PerspectaAuth.client;
+    if (!client) { status.textContent = 'Supabase is not configured yet.'; return; }
+
+    status.textContent = 'Signing in…';
+    const { error } = await client.auth.signInWithPassword({
+      email: document.getElementById('signinEmail').value.trim(),
+      password: document.getElementById('signinPassword').value
+    });
+
+    if (error) {
+      status.textContent = error.message;
+      showToast('Sign-in failed.', 'error');
+      return;
+    }
+    showToast('Signed in.', 'success');
+    location.href = paramRedirect();
+  });
+
+  document.getElementById('signupForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const status = document.getElementById('signupStatus');
+    const client = window.PerspectaAuth.client;
+    if (!client) { status.textContent = 'Supabase is not configured yet.'; return; }
+
+    status.textContent = 'Creating your account…';
+    const { error } = await client.auth.signUp({
+      email: document.getElementById('signupEmail').value.trim(),
+      password: document.getElementById('signupPassword').value,
+      options: { data: { name: document.getElementById('signupName').value.trim() } }
+    });
+
+    if (error) {
+      status.textContent = error.message;
+      showToast('Could not create account.', 'error');
+      return;
+    }
+    status.textContent = 'Account created. Check your email to confirm, then sign in.';
+    showToast('Account created.', 'success');
+  });
+</script>
+</body>
+</html>
