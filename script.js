@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     teamGrid.innerHTML = team.map(person => {
       const safeName = (person.name || 'Team Member').replace(/</g, '&lt;');
       const safeRole = (person.role || '').replace(/</g, '&lt;');
-      const safeBio = (person.bio || '').replace(/</g, '&lt;');
+      const safeBio = person.bio || '';
       const hasPhoto = Boolean(person.photo);
 
       const mediaMarkup = hasPhoto
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="team-body">
             <h3 class="team-name">${safeName}</h3>
             ${safeRole ? `<span class="team-role">${safeRole}</span>` : ''}
-            ${safeBio ? `<p class="team-bio">${safeBio}</p>` : ''}
+            ${safeBio ? `<div class="team-bio">${safeBio}</div>` : ''}
           </div>
         </article>
       `;
