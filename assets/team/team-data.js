@@ -17,13 +17,6 @@
 
 window.PERSPECTA_TEAM = [
   {
-    id: 'dominguez',
-    name: 'Aleco Dominguez',
-    role: 'Founding team — role pending confirmation',
-    bio: "Aleco serves on Perspecta Human Insight's board, where he leads brand strategy, digital communications, and the organization's web presence as it moves from founding idea to functioning institution. He's a Computer Science and Neuroscience & Cognitive Science double major at the University of Arizona who enjoys bridging hardware, code, and complex data. After competing internationally in triathlon for Peru, a foot stress fracture and disc injury forced him to pivot away from elite sports — he poured that same focus into research and engineering, and today splits his time analyzing RNA-sequencing data in the Julie E. Miller lab as part of the NIH-funded FUERZA cohort, writing SOPs and maintaining hardware in a nanofabrication cleanroom, and shipping full-stack projects like WhyPhy, a tool to help students find reliable campus Wi-Fi. He also manages the 2x NCAA Champion Arizona Women's Triathlon team and leads brand strategy for the Wildcat Heroes Award scholarship which inspired the Pima Heroes Award.",
-    photo: 'assets/team/dominguez.jpg'
-  },
-  {
     id: 'jaiyeola',
     name: 'Joshua Ayomikun Jaiyeola',
     role: 'Founder — role pending confirmation',
@@ -43,6 +36,13 @@ window.PERSPECTA_TEAM = [
     role: 'Founding team — role pending confirmation',
     bio: "Kara Mickelson is a graduate accounting student at George Mason University and a graduate of the University of Arizona, where she earned a B.S. in Accounting and a B.A. in Political Science with an emphasis in Law and Public Policy, along with a minor in History. Her interests lie at the intersection of accounting and government, particularly in how strong financial systems, transparency, and accountability can support effective institutions and the responsible use of public resources. She hopes to obtain her CPA license and build a career that combines her accounting background with her interest in government and public service. Kara is also a Teach For America Fellow, reflecting her passion for investing in younger generations and helping students recognize their potential. She cares deeply about mentorship, education, and creating opportunities for young people to grow in confidence and build strong foundations for their futures. Outside of her academic and professional work, Kara has spent both her undergraduate and graduate career as an NCAA Division I distance runner. At the University of Arizona, she competed in cross country and track and field, served as a team captain, and represented student-athletes through the Student-Athlete Advisory Committee. She now competes in cross country at George Mason University while continuing her graduate studies. Originally from Yakima, Washington, Kara is an avid hiker and enjoys spending as much time outdoors as possible. Her love of distance running extends beyond competition, and one of her goals after completing her NCAA eligibility is to run the Grand Canyon Rim to Rim. She hopes to continue finding challenges that combine her love of running, hiking, travel, and the outdoors long after her collegiate running career comes to an end.",
     photo: 'assets/team/mickelson.jpg'
+  },
+   {
+    id: 'dominguez',
+    name: 'Aleco Dominguez',
+    role: 'Founding team — role pending confirmation',
+    bio: "Aleco serves on Perspecta Human Insight's board, where he leads brand strategy, digital communications, and the organization's web presence as it moves from founding idea to functioning institution. He's a Computer Science and Neuroscience & Cognitive Science double major at the University of Arizona who enjoys bridging hardware, code, and complex data. After competing internationally in triathlon for Peru, a foot stress fracture and disc injury forced him to pivot away from elite sports — he poured that same focus into research and engineering, and today splits his time analyzing RNA-sequencing data in the Julie E. Miller lab as part of the NIH-funded FUERZA cohort, writing SOPs and maintaining hardware in a nanofabrication cleanroom, and shipping full-stack projects like WhyPhy, a tool to help students find reliable campus Wi-Fi. He also manages the 2x NCAA Champion Arizona Women's Triathlon team and leads brand strategy for the Wildcat Heroes Award scholarship which inspired the Pima Heroes Award.",
+    photo: 'assets/team/dominguez.jpg'
   }
 
   /* Example of a team member with no headshot yet — renders an
