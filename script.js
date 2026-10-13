@@ -128,6 +128,58 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', updateHeaderShadow, { passive: true });
   updateHeaderShadow();
 
+  /* ---------- Team Grid (dynamic, data-driven) ---------- */
+  const teamGrid = document.getElementById('teamGrid');
+
+  function initials(name) {
+    return name
+      .replace(/—.*$/, '')
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean)
+      .slice(0, 2)
+      .map(part => part[0].toUpperCase())
+      .join('');
+  }
+
+  function renderTeam() {
+    if (!teamGrid) return;
+    const team = window.PERSPECTA_TEAM || [];
+
+    if (!team.length) {
+      teamGrid.innerHTML = '<p class="no-results">Team bios are coming soon.</p>';
+      return;
+    }
+
+    teamGrid.innerHTML = team.map(person => {
+      const safeName = (person.name || 'Team Member').replace(/</g, '&lt;');
+      const safeRole = (person.role || '').replace(/</g, '&lt;');
+      const safeBio = (person.bio || '').replace(/</g, '&lt;');
+      const hasPhoto = Boolean(person.photo);
+
+      const mediaMarkup = hasPhoto
+        ? `<img src="${person.photo}" alt="${safeName}" loading="lazy"
+             onerror="this.closest('.team-photo').classList.add('is-fallback'); this.remove();">`
+        : '';
+
+      return `
+        <article class="team-card">
+          <div class="team-photo${hasPhoto ? '' : ' is-fallback'}">
+            ${mediaMarkup}
+            <span class="team-initials" aria-hidden="true">${initials(safeName) || '•'}</span>
+          </div>
+          <div class="team-body">
+            <h3 class="team-name">${safeName}</h3>
+            ${safeRole ? `<span class="team-role">${safeRole}</span>` : ''}
+            ${safeBio ? `<p class="team-bio">${safeBio}</p>` : ''}
+          </div>
+        </article>
+      `;
+    }).join('');
+  }
+
+  renderTeam();
+
   /* ---------- Newsletter Form (front-end only placeholder) ---------- */
   const newsletterForm = document.getElementById('newsletterForm');
   const formStatus = document.getElementById('formStatus');
