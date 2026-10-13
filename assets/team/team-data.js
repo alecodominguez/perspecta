@@ -56,4 +56,8 @@ window.PERSPECTA_TEAM = [
     bio: 'Short bio goes here.'
   }
   */
+
+   /*
+   delete this comment
+   */
 ];
