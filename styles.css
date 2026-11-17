@@ -1133,6 +1133,25 @@ h1, h2, h3 {
 .auth-note { font-size: 0.82rem; color: var(--color-meta); margin-top: var(--space-sm); line-height: 1.5; }
 .auth-note a { color: var(--color-accent); font-weight: 600; }
 
+/* ---------- Account nav (Home / Writer / Board) ---------- */
+.account-nav { display: flex; gap: 0.25rem; margin-right: 0.25rem; }
+.account-nav a {
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  color: var(--color-ink-soft);
+  transition: background var(--transition), color var(--transition);
+}
+.account-nav a:hover { background: var(--color-cream-alt); color: var(--color-ink); }
+.account-nav a.is-current { background: var(--color-forest); color: var(--color-cream); }
+@media (max-width: 860px) {
+  .account-nav { flex-wrap: wrap; justify-content: flex-end; }
+  .account-nav a { padding: 0.3rem 0.55rem; font-size: 0.74rem; }
+  .dash-whoami { display: none; }
+}
+
 /* ---------- Dashboards (shared) ---------- */
 .dash { padding: var(--space-lg) 0 var(--space-xl); }
 .dash-whoami {
