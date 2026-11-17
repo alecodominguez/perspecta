@@ -17,6 +17,6 @@
    ========================================================================== */
 
 window.PERSPECTA_SUPABASE_CONFIG = {
-  url: 'https://YOUR-PROJECT-REF.supabase.co',
-  anonKey: 'YOUR-ANON-PUBLIC-KEY'
+  url: 'https://tonxhckajfxjesaxdzon.supabase.co',
+  anonKey: 'sb_publishable_NpVrgMFdhmD5PkCEHUfbXA_KMzI_OJ2'
 };
