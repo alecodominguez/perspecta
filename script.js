@@ -171,11 +171,52 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="team-body">
             <h3 class="team-name">${safeName}</h3>
             ${safeRole ? `<span class="team-role">${safeRole}</span>` : ''}
-            ${safeBio ? `<div class="team-bio">${safeBio}</div>` : ''}
+            ${safeBio ? `<button type="button" class="team-more" data-id="${person.id}">Read bio</button>` : ''}
           </div>
         </article>
       `;
     }).join('');
+
+    teamGrid.querySelectorAll('.team-more').forEach(btn => {
+      btn.addEventListener('click', () => openBio(team.find(p => p.id === btn.dataset.id), btn));
+    });
+  }
+
+  /* ---------- Bio modal ---------- */
+  let bioModal, lastFocus;
+  function closeBio() {
+    if (!bioModal) return;
+    bioModal.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  }
+  function openBio(person, trigger) {
+    if (!person) return;
+    lastFocus = trigger;
+    if (!bioModal) {
+      bioModal = document.createElement('div');
+      bioModal.className = 'bio-modal';
+      bioModal.hidden = true;
+      bioModal.innerHTML = `
+        <div class="bio-backdrop" data-close></div>
+        <div class="bio-dialog" role="dialog" aria-modal="true" aria-labelledby="bioName">
+          <button type="button" class="bio-close" data-close aria-label="Close bio">✕</button>
+          <div class="bio-head"><img alt="" class="bio-img"><div><h3 id="bioName"></h3><span class="team-role"></span></div></div>
+          <div class="bio-text"></div>
+        </div>`;
+      document.body.appendChild(bioModal);
+      bioModal.addEventListener('click', e => { if (e.target.hasAttribute('data-close')) closeBio(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBio(); });
+    }
+    const img = bioModal.querySelector('.bio-img');
+    img.hidden = !person.photo;
+    if (person.photo) img.src = person.photo;
+    bioModal.querySelector('#bioName').textContent = person.name;
+    bioModal.querySelector('.team-role').textContent = person.role || '';
+    bioModal.querySelector('.bio-text').innerHTML = person.bio;
+    bioModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    bioModal.querySelector('.bio-close').focus();
   }
 
   renderTeam();
